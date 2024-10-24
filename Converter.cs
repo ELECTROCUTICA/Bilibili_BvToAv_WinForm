@@ -2,13 +2,13 @@
 
 namespace Bilibili_BvToAv_WinForm {
     public class Converter {
-        public const ulong sub = 100618342136696320;
+        public const long sub = 100618342136696320;
         public const string operation = "1010100100111011001100100100";
 
 
         public static string ConvertToOlder(string bv) {
             var charlist = new List<char>(bv.ToCharArray());
-            var numbers = new List<ulong>(32);
+            var numbers = new List<long>(32);
 
             for (var i = 2; i <= 11; i++) {
                 if (charlist[i] == '1') { numbers.Add(13); }
@@ -71,21 +71,21 @@ namespace Bilibili_BvToAv_WinForm {
                 if (charlist[i] == 'z') { numbers.Add(19); }
             }
 
-            ulong Final = numbers[0] * (ulong)Math.Pow(58, 6) +
-                numbers[1] * (ulong)Math.Pow(58, 2) +
-                numbers[2] * (ulong)Math.Pow(58, 4) +
-                numbers[3] * (ulong)Math.Pow(58, 8) +
-                numbers[4] * (ulong)Math.Pow(58, 5) +
-                numbers[5] * (ulong)Math.Pow(58, 9) +
-                numbers[6] * (ulong)Math.Pow(58, 3) +
-                numbers[7] * (ulong)Math.Pow(58, 7) +
-                numbers[8] * (ulong)Math.Pow(58, 1) +
+            long Final = numbers[0] * (long)Math.Pow(58, 6) +
+                numbers[1] * (long)Math.Pow(58, 2) +
+                numbers[2] * (long)Math.Pow(58, 4) +
+                numbers[3] * (long)Math.Pow(58, 8) +
+                numbers[4] * (long)Math.Pow(58, 5) +
+                numbers[5] * (long)Math.Pow(58, 9) +
+                numbers[6] * (long)Math.Pow(58, 3) +
+                numbers[7] * (long)Math.Pow(58, 7) +
+                numbers[8] * (long)Math.Pow(58, 1) +
                 numbers[9]
                 - sub;
 
 
 
-            ulong av = Final ^ Convert.ToUInt64(operation, 2);
+            long av = Final ^ Convert.ToInt64(operation, 2);
             return $"av{av}";
         }
     }
