@@ -1,4 +1,4 @@
-namespace Bilibili_BvToAv_WinForm {
+﻿namespace Bilibili_BvToAv_WinForm {
     internal static class Program {
         /// <summary>
         ///  The main entry point for the application.
