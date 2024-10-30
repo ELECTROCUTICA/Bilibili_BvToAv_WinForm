@@ -9,7 +9,7 @@ namespace Bilibili_BvToAv_WinForm {
         private const int LENGTH = 9;
 
         public static string ConvertToAV(string bv) {
-            if (!bv.StartsWith("BV1") || bv.Length != 12) {
+            if (!bv.StartsWith("BV1", true) || bv.Length != 12) {
                 throw new Exception("无效的BV字符串");
             }
 
