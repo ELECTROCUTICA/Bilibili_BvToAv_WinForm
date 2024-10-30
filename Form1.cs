@@ -11,7 +11,7 @@ namespace Bilibili_BvToAv_WinForm {
 
         private void button1_Click(object sender, EventArgs e) {
 
-            string result = Converter.ConvertToOlder(textBox1.Text);
+            string result = Converter.ConvertToAV(textBox1.Text);
             textBox2.Text = result;
         }
     }
